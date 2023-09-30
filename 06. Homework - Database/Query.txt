@@ -1,0 +1,62 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Barang {
+  id_Barang integer [primary key]
+  id_Kategori integer [foreign Key]
+  Nama varchar
+  Harga decimal
+  Stok integer
+}
+
+Table KategoriBarang {
+  id_Kategori integer [primary key]
+  Nama varchar
+}
+
+Ref: Barang.id_Kategori < KategoriBarang.id_Kategori
+
+
+// Buatlah query untuk melakukan create table barang dan kategori barang
+
+-- Membuat tabel Kategori Barang
+CREATE TABLE KategoriBarang (
+    IDKategori INT PRIMARY KEY AUTO_INCREMENT,
+    NamaKategori VARCHAR(255) NOT NULL
+);
+
+-- Membuat tabel Barang 
+CREATE TABLE Barang (
+    IDBarang INT PRIMARY KEY AUTO_INCREMENT,
+    NamaBarang VARCHAR(255) NOT NULL,
+    Harga DECIMAL(10, 2) NOT NULL,
+    Stok INT NOT NULL,
+    IDKategori INT,
+    FOREIGN KEY (IDKategori) REFERENCES KategoriBarang(IDKategori)
+);
+
+
+// Buatlah query untuk melakukan select, insert, update barang
+
+SELECT * FROM Barang;
+
+INSERT INTO Barang (NamaBarang, Harga, Stok, IDKategori) VALUES ('Kartu Uno', 10.000, 10, 1);
+
+UPDATE Barang SET Harga = 12.000 WHERE IDBarang = 1;
+
+
+
+// Buatlah query untuk melakukan select, insert, update kategori barang
+
+SELECT * FROM KategoriBarang;
+
+INSERT INTO KategoriBarang (NamaKategori) VALUES ('Kartu');
+
+UPDATE KategoriBarang SET NamaKategori = 'kartu-kartuan' WHERE IDKategori = 1;
+
+
+Buatlah query untuk melakukan join relasi antara barang dan kategori barang
+
+SELECT Barang.*, KategoriBarang.NamaKategori 
+FROM Barang 
+INNER JOIN KategoriBarang ON Barang.IDKategori = KategoriBarang.IDKategori;

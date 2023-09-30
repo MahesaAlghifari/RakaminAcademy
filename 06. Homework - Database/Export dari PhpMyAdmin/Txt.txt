@@ -1,0 +1,15 @@
+===Database penjual_mainan
+
+== Table structure for table Barang
+
+|------
+|Column|Type|Null|Default
+|------
+|//**IDBarang**//|int(11)|No|
+|NamaBarang|varchar(255)|No|
+|Harga|decimal(10,2)|No|
+|Stok|int(11)|No|
+|IDKategori|int(11)|Yes|NULL
+== Dumping data for table Barang
+
+|2|Kartu Uno|10.00|10|1
