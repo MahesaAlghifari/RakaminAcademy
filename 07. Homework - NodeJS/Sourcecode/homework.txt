@@ -1,0 +1,5 @@
+Luas persegi: 100
+Keliling persegi: 40
+Luas persegi panjang: 150
+Keliling persegi panjang: 3020
+
