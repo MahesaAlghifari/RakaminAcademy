@@ -1,0 +1,30 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Contoh file CSS */
+body {
+  background-color: #F5F5F5;
+  margin: 0; /* Reset margin untuk body, jika diperlukan */
+  padding: 0; /* Reset padding untuk body, jika diperlukan */
+}
+/* styles.css atau dalam komponen React yang menggunakan modul CSS */
+
